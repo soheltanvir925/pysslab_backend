@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="post">
+            <div>
+                <label>Name</label>
+                <input type="text" name="{{ field.username }}" placeholder="username"/><br>
+                <label>email</label>
+                <input type="email" name="{{ field.email }}" placeholder="email"/><br>
+                <label>password1</label>
+                <input type="password" name="password1" placeholder="password1"/><br>
+                <label>password2</label>
+                <input type="password" name="password2" placeholder="password2"/><br>
+                
+                <button type="submit">Register</button>
+            </div>
+    </form>
+</body>
+</html>

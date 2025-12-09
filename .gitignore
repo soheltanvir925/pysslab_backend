@@ -1,0 +1,150 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+*.egg-info/
+.installed.cfg
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg
+*.whl
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media/
+# collected static files
+staticfiles/
+# If you use STATIC_ROOT in development, ignore it
+static_root/
+
+# Django migrations - normally you want to commit migrations.
+# Uncomment the next line to ignore all migrations:
+# */migrations/*.py
+# */migrations/*.pyc
+# Keep the following to allow committing migration init files if desired:
+# */migrations/__init__.py
+
+# Environment and secrets
+.env
+.env.*
+*.env
+.local
+.secrets/
+secrets.json
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+venv.bak/
+venv-*/
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+
+# VS Code
+.vscode/
+
+# Editor swap/temp files
+*~
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# JetBrains caches
+.idea/
+*.iws
+.idea_modules/
+
+# Node/npm
+frontend/node_modules/
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnp/
+.pnp.js
+
+# Logs
+logs/
+*.log
+
+# Static build artifacts
+dist/
+build/
+.cache/
+coverage/
+
+# IDE specific
+*.sublime-project
+*.sublime-workspace
+
+# Byte-compiled Java class files (if using JVM tools)
+*.class
+
+# Coverage and profiling
+coverage/
+nosetests.xml
+coverage.xml
+*.cover
+*.gcov
+
+# Misc
+*.sql
+*.sqlite
+*.sqlite3
+
+# Force git to track this file even if ignored elsewhere
+!.gitignore
