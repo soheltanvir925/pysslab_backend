@@ -1,6 +1,9 @@
 version: "3.9"
 
 services:
+  # =====================================
+  # PostgreSQL Database
+  # =====================================
   db:
     image: postgres:15
     container_name: postgres_db
@@ -13,38 +16,56 @@ services:
     networks:
       - app-network
 
+  # =====================================
+  # Redis Cache
+  # =====================================
   redis:
     image: redis:7
     container_name: redis_cache
     networks:
       - app-network
 
+  # =====================================
+  # Django Backend Service
+  # =====================================
   backend:
-    build: ./backend
+    build:
+      context: ./backend     # Directory where Dockerfile exists
+      dockerfile: Dockerfile
     container_name: django_backend
     depends_on:
       - db
       - redis
     environment:
-      # Django superuser
+      # Django superuser creation
       DJANGO_SUPERUSER_USERNAME: admin
       DJANGO_SUPERUSER_EMAIL: admin@example.com
       DJANGO_SUPERUSER_PASSWORD: adminpass
 
-      # PostgreSQL
+      # PostgreSQL settings
       DB_NAME: mydb
       DB_USER: myuser
       DB_PASSWORD: mypassword
       DB_HOST: db
+      DB_PORT: 5432
 
-      # Redis
+      # Redis settings
       REDIS_HOST: redis
+      REDIS_PORT: 6379
+
+      # Optional Django environment vars
+      DEBUG: "0"
+      SECRET_KEY: "change-this-in-production"
+
     ports:
-      - "8080:8000"
+      - "8000:8000"       # Expose Gunicorn/Django app
+    entrypoint: ["/app/entrypoint.sh"]   # your uploaded script
     networks:
       - app-network
 
-
+# =====================================
+# Networks & Volumes
+# =====================================
 networks:
   app-network:
 

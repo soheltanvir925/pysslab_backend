@@ -3,6 +3,8 @@ set -e
 
 # Run migrations
 python manage.py migrate --noinput
+python manage.py collectstatic --noinput
+gunicorn core.wsgi:application --bind 0.0.0.0:8000
 
 # Create superuser if not exists
 python manage.py shell <<EOF
